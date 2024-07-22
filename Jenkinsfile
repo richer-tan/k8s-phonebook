@@ -6,7 +6,7 @@ pipeline {
         AWS_ACCOUNT_ID=sh(script:'aws sts get-caller-identity --query Account --output text', returnStdout:true).trim()
         AWS_REGION="us-east-1"
         ECR_REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
-        CLUSTER_URL="http://44.200.169.217:8080"
+        CLUSTER_URL="https://172.31.94.103:6443"
     }
   stages {
     stage('Create ECR Repo') {
